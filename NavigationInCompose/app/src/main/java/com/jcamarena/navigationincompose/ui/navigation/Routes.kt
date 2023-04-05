@@ -7,6 +7,7 @@ enum class Routes(val route: String) {
     SignUp("signUp"),
     Authenticated("authenticated"),
     Home("home"),
+    HomeGreeting("homeGreeting"),
     Profile("profile"),
     Settings("settings")
 }

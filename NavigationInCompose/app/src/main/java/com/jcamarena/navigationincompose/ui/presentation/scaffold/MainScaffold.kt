@@ -10,8 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.jcamarena.navigationincompose.ui.navigation.ApplicationNavHost
-import com.jcamarena.navigationincompose.ui.presentation.bottomnavigation.BottomNavigation
-import com.jcamarena.navigationincompose.ui.presentation.bottomnavigation.bottomBarVisibility
+import com.jcamarena.navigationincompose.ui.presentation.widgets.bottomnavigation.BottomNavigation
+import com.jcamarena.navigationincompose.ui.presentation.widgets.bottomnavigation.bottomBarVisibility
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

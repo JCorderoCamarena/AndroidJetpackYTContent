@@ -1,4 +1,4 @@
-package com.jcamarena.navigationincompose.ui.presentation.bottomnavigation
+package com.jcamarena.navigationincompose.ui.presentation.widgets.bottomnavigation
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.slideInVertically

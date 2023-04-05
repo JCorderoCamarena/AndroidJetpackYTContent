@@ -1,23 +1,31 @@
 package com.jcamarena.navigationincompose.ui.navigation.navgraph
 
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.jcamarena.navigationincompose.ui.navigation.Routes
-import com.jcamarena.navigationincompose.ui.presentation.widgets.AuthenticatedScreen
+import com.jcamarena.navigationincompose.ui.navigation.navigateToGreetingScreen
+import com.jcamarena.navigationincompose.ui.presentation.screens.profile.ProfileScreen
+import com.jcamarena.navigationincompose.ui.presentation.screens.settings.SettingsScreen
 
 fun NavGraphBuilder.addAuthenticatedNavGraph(
+    navController: NavHostController,
     onLogoutPressed: () -> Unit
 ) {
     navigation(startDestination = Routes.Home.route, route = Routes.Authenticated.route) {
-        composable(route = Routes.Home.route) {
-            AuthenticatedScreen(label = "Home", onLogoutPressed = onLogoutPressed)
-        }
+        addHomeRoutes(
+            onLogoutPressed = onLogoutPressed,
+            onNavigateToGreetingScreen = {
+                navController.navigateToGreetingScreen(it)
+            }
+        )
+
         composable(route = Routes.Profile.route) {
-            AuthenticatedScreen(label = "Profile", onLogoutPressed = onLogoutPressed)
+            ProfileScreen(onLogoutPressed = onLogoutPressed)
         }
         composable(route = Routes.Settings.route) {
-            AuthenticatedScreen(label = "Settings", onLogoutPressed = onLogoutPressed)
+            SettingsScreen(onLogoutPressed = onLogoutPressed)
         }
     }
 }

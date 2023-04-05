@@ -1,5 +1,5 @@
 [versions]
-gradlePlugin = "8.1.0-alpha10"
+gradlePlugin = "8.1.0-alpha11"
 kotlin = "1.8.10"
 
 coreKtx = "1.9.0"
@@ -27,6 +27,7 @@ compose-ui-graphics = {module="androidx.compose.ui:ui-graphics"}
 compose-ui-tooling  = {module="androidx.compose.ui:ui-tooling-preview"}
 compose-material3   = {module="androidx.compose.material3:material3"}
 compose-navigation  = {module="androidx.navigation:navigation-compose", version.ref="composeNavigation"}
+appcompat           = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 
 #TESTING
 test-junit          = {module="junit:junit", version.ref="junit"}
@@ -35,8 +36,8 @@ test-espresso-core  = {module="androidx.test.espresso:espresso-core", version.re
 test-junit-ui       = {module="androidx.compose.ui:ui-test-junit4"}
 test-compose-ui-tooling = {group="androidx.compose.ui", name="ui-tooling"}
 test-compose-ui-manifest= {group="androidx.compose.ui", name="ui-test-manifest"}
-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+material            = { group = "com.google.android.material", name = "material", version.ref = "material" }
+navigation-test     = {module= "androidx.navigation:navigation-testing", version.ref="composeNavigation"}
 
 [bundles]
 

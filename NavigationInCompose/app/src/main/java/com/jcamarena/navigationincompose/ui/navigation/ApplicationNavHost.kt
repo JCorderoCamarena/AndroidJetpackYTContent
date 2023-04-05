@@ -40,7 +40,7 @@ fun ApplicationNavHost(
         )
 
 
-        addAuthenticatedNavGraph {
+        addAuthenticatedNavGraph(navController = navController) {
             authenticated = false
             navController.popBackStack(Routes.Home.route, inclusive = true)
             navController.navigate(Routes.SignIn.route)

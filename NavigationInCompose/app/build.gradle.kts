@@ -47,6 +47,8 @@ android {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":authentication")))
+    implementation(project(mapOf("path" to ":home")))
 
     implementation(libs.android.core.ktx)
     implementation(libs.lifecycle.runtime)
@@ -60,13 +62,12 @@ dependencies {
 }
 
 dependencies {
-    implementation(project(mapOf("path" to ":authentication")))
-    implementation(project(mapOf("path" to ":home")))
     testImplementation(libs.test.junit)
     testImplementation(libs.test.junit.ext)
     testImplementation(libs.test.espresso.core)
     androidTestImplementation( platform(libs.compose.bom) )
     androidTestImplementation(libs.test.junit.ui)
+    androidTestImplementation(libs.navigation.test)
     debugImplementation(libs.test.compose.ui.tooling)
     debugImplementation(libs.test.compose.ui.manifest)
 }
