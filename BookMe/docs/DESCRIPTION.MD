@@ -1,7 +1,7 @@
 # BOOK ME
 ---
 
-### CONTENT
+## CONTENT
 - [Overview](#overview)
 - [Details](#details)
 - [Screens](#screens)
@@ -10,13 +10,13 @@
 
 
 
-#### Overview
+### Overview
 TBD
-#### Details
+### Details
 TBD
-#### Screens
+### Screens
 TBD
-#### Database Schema
+### Database Schema
 TBD
-#### Back End
+### Back End
 TBD
