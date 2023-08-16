@@ -12,4 +12,4 @@ Also APIs and stuff like:
 - UI/Unit Testing
 
 
-Documentation found [here](/docs/DESCRIPTION.MD)
+Documentation found [here](docs/DESCRIPTION.MD)
