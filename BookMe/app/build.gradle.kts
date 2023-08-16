@@ -1,9 +1,15 @@
+import com.google.protobuf.gradle.generateProtoTasks
+import com.google.protobuf.gradle.plugins
+import com.google.protobuf.gradle.protoc
+
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     kotlin("kapt")
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.hiltAndroid)
+    alias(libs.plugins.protoBuf)
+
 }
 
 android {
@@ -75,6 +81,11 @@ dependencies {
     implementation(libs.material3)
     implementation(platform(libs.compose.bom))
 
+    // DataStore
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.datastore)
+    implementation(libs.google.protobuf.kotlin)
+
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
     androidTestImplementation(platform(libs.compose.bom))
@@ -94,4 +105,27 @@ dependencies {
 
 kapt {
     correctErrorTypes = true
+}
+
+protobuf.protobuf.run {
+    protoc {
+        artifact = if (osdetector.os == "osx") {
+            "com.google.protobuf:protoc:3.23.0:osx-x86_64"
+        } else {
+            "com.google.protobuf:protoc:3.23.0"
+        }
+    }
+
+    generateProtoTasks {
+        all().configureEach {
+            plugins {
+                create("java")
+            }
+            builtins {
+                java {
+                    "lite"
+                }
+            }
+        }
+    }
 }
